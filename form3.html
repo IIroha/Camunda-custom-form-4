@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Application Form - Camunda</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        .loan-form {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .loan-form th, .loan-form td {
+            border: 1px solid #000;
+            padding: 5px;
+            text-align: left;
+        }
+        
+        .loan-form th {
+            background-color: #e0e0e0;
+        }
+
+        .loan-form input, .loan-form select, .loan-form textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+    <form class="camunda-form">
+        <table class="loan-form">
+            <tr>
+                <th colspan="4">New Loan</th>
+            </tr>
+            <tr>
+                <td>Branch</td>
+                <td>
+                    <select name="branch" cam-variable-name="branch" cam-variable-type="String">
+                        <option value="">Choose an item...</option>
+                        <!-- Add branches here -->
+                    </select>
+                </td>
+                <td>CO's Name</td>
+                <td>
+                    <input type="text" name="cosName" cam-variable-name="cosName" cam-variable-type="String">
+                </td>
+            </tr>
+            <tr>
+                <td>Name of Borrower</td>
+                <td><input type="text" name="borrowerName" cam-variable-name="borrowerName" cam-variable-type="String"></td>
+                <td>Loan Type</td>
+                <td><input type="text" name="loanType" cam-variable-name="loanType" cam-variable-type="String"></td>
+            </tr>
+            <tr>
+                <td>Name of Co-borrower</td>
+                <td><input type="text" name="coBorrowerName" cam-variable-name="coBorrowerName" cam-variable-type="String"></td>
+                <td>New Loan</td>
+                <td><input type="text" name="newLoan" cam-variable-name="newLoan" cam-variable-type="String"></td>
+            </tr>
+            <!-- Repeat similar rows for other fields -->
+            <tr>
+                <td>Loan Limit</td>
+                <td colspan="3">
+                    <input type="number" name="loanLimit" cam-variable-name="loanLimit" cam-variable-type="Double">
+                </td>
+            </tr>
+            <tr>
+                <td>Interest Rate</td>
+                <td>
+                    <input type="text" name="interestRate" cam-variable-name="interestRate" cam-variable-type="String">
+                </td>
+                <td>Loan Fee</td>
+                <td>
+                    <input type="text" name="loanFee" cam-variable-name="loanFee" cam-variable-type="String">
+                </td>
+            </tr>
+            <tr>
+                <td>Loan Purpose</td>
+                <td colspan="3">
+                    <textarea name="loanPurpose" cam-variable-name="loanPurpose" cam-variable-type="String"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>Sources of Income</td>
+                <td colspan="3">
+                    <textarea name="sourcesOfIncome" cam-variable-name="sourcesOfIncome" cam-variable-type="String"></textarea>
+                </td>
+            </tr>
+            <!-- Additional rows for net income, collateral details, LVR, etc. -->
+        </table>
+    </form>
+</body>
+</html>
